@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+
+
+        <style>#content {
+                white-space: pre-wrap;
+            }</style>
 </head>
 
 <body>
@@ -18,55 +23,56 @@
         <h1>Editor</h1>
 
         <div class="btn-group">
-            <button id="heading1" class="btn btn-primary">Heading 1</button>
-            <button id="heading2" class="btn btn-primary">Heading 2</button>
-            <button id="heading3" class="btn btn-primary">Heading 3</button>
-            <button id="heading4" class="btn btn-primary">Heading 4</button>
-            <button id="heading5" class="btn btn-primary">Heading 5</button>
-            <button id="heading6" class="btn btn-primary">Heading 6</button>
+            <button id="heading1" class="btn btn-outline-dark btn-sm">Heading 1</button>
+            <button id="heading2" class="btn btn-outline-dark btn-sm">Heading 2</button>
+            <button id="heading3" class="btn btn-outline-dark btn-sm">Heading 3</button>
+            <button id="heading4" class="btn btn-outline-dark btn-sm">Heading 4</button>
+            <button id="heading5" class="btn btn-outline-dark btn-sm">Heading 5</button>
+            <button id="heading6" class="btn btn-outline-dark btn-sm">Heading 6</button>
         </div>
 
         <div class="btn-group">
-            <button id="arial" class="btn btn-primary">Arial</button>
-            <button id="remove-format" class="btn btn-primary">Remove format</button>
+            <button id="arial" class="btn btn-outline-dark btn-sm">Arial</button>
+            <button id="remove-format" class="btn btn-outline-dark btn-sm">Remove format</button>
 
-            <button id="bold" class="btn btn-primary">
+            <button id="bold" class="btn btn-outline-dark btn-sm">
                 <i class="fa fa-bold"></i>
             </button>
 
-            <button id="italic" class="btn btn-primary">
+            <button id="italic" class="btn btn-outline-dark btn-sm">
                 <i class="fa fa-italic"></i>
             </button>
 
-            <button id="insert-image" class="btn btn-primary">
+            <button id="insert-image" class="btn btn-outline-dark btn-sm">
                 Insert image
             </button>
         </div>
 
         <div class="btn-group">
-            <button id="undo" class="btn btn-primary">
+            <button id="undo" class="btn btn-outline-dark btn-sm">
                 <i class="fa fa-undo"></i>
             </button>
 
-            <button id="redo" class="btn btn-primary">
+            <button id="redo" class="btn btn-outline-dark btn-sm">
                 <i class="fa fa-redo"></i>
 
             </button>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <article id="content" contentEditable="">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+
+            <div class="col-md-6">
+                <article class="my-5 p-2 border rounded" id="content" contentEditable="">
+                    <h1>TEST</h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
                     provident eius quia numquam culpa dignissimos inventore iure esse
                     doloremque deleniti quisquam, ut sit molestias harum totam tempore ab
                     consequuntur deserunt.
                 </article>
             </div>
-            <!-- 
+            
             <div class="col-md-6">
-                <article id="innerHTML"></article>
-            </div> -->
+                <article class="my-5 p-2 border rounded" id="raw-html"></article>
+            </div>
         </div>
 
 

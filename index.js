@@ -9,7 +9,7 @@ const heading5 = document.getElementById("heading5");
 const heading6 = document.getElementById("heading6");
 
 const content = document.getElementById("content");
-const innerHTML = document.getElementById("innerHTML");
+const rawHtml = document.getElementById("raw-html");
 
 const arial = document.getElementById("arial");
 
@@ -31,10 +31,11 @@ undo.addEventListener("click", () => {
 });
 
 insertImage.addEventListener("click", () => {
+  const image = prompt('Enter image url: ');
   document.execCommand(
     "insertImage",
     false,
-    "https://images.pexels.com/photos/2724373/pexels-photo-2724373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    image
   );
 });
 
@@ -81,3 +82,9 @@ heading6.addEventListener("click", e => {
 arial.addEventListener("click", e => {
   document.execCommand("fontName", false, "Arial");
 });
+
+
+content.addEventListener('keypress', e => {
+  console.log(content.innerHTML)  
+  rawHtml.innerText = content.innerHTML;
+})

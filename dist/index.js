@@ -117,72 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-var bold = document.getElementById("bold");
-var italic = document.getElementById("italic");
-var heading1 = document.getElementById("heading1");
-var heading2 = document.getElementById("heading2");
-var heading3 = document.getElementById("heading3");
-var heading4 = document.getElementById("heading4");
-var heading5 = document.getElementById("heading5");
-var heading6 = document.getElementById("heading6");
-var content = document.getElementById("content");
-var rawHtml = document.getElementById("raw-html");
-var arial = document.getElementById("arial");
-var removeFormat = document.getElementById("remove-format");
-var insertImage = document.getElementById("insert-image");
-var redo = document.getElementById("redo");
-var undo = document.getElementById("undo");
-document.execCommand("defaultParagraphSeparator", false, "p");
-document.execCommand("styleWithCSS", true);
-redo.addEventListener("click", function () {
-  document.execCommand("redo", false);
-});
-undo.addEventListener("click", function () {
-  document.execCommand("undo", false);
-});
-insertImage.addEventListener("click", function () {
-  var image = prompt('Enter image url: ');
-  document.execCommand("insertImage", false, image);
-});
-content.addEventListener("change", function (e) {
-  innerHTML.innerText = e.target.value;
-});
-italic.addEventListener("click", function (e) {
-  document.execCommand("italic", false, null);
-});
-removeFormat.addEventListener("click", function (e) {
-  document.execCommand("removeFormat", false, null);
-});
-bold.addEventListener("click", function (e) {
-  document.execCommand("bold", false, null);
-});
-heading1.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h1");
-});
-heading2.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h2");
-});
-heading3.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h3");
-});
-heading4.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h4");
-});
-heading5.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h5");
-});
-heading6.addEventListener("click", function (e) {
-  document.execCommand("formatBlock", false, "h6");
-});
-arial.addEventListener("click", function (e) {
-  document.execCommand("fontName", false, "Arial");
-});
-content.addEventListener('keypress', function (e) {
-  console.log(content.innerHTML);
-  rawHtml.innerText = content.innerHTML;
-});
-},{}],"C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js"}],"C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -386,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/editor.e31bb0bc.js.map
+},{}]},{},["C:/Users/Jovan/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
