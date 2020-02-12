@@ -1,0 +1,23 @@
+{
+  "name": "rich-text-editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JovanDj/rich-text-editor.git"
+  },
+  "keywords": [],
+  "author": "Jovan Djukic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JovanDj/rich-text-editor/issues"
+  },
+  "homepage": "https://github.com/JovanDj/rich-text-editor#readme"
+}
